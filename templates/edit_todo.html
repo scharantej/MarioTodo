@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit TODO Item</title>
+</head>
+<body>
+<h1>Edit TODO Item</h1>
+<form action="/edit_todo/{{ todo.id }}" method="POST">
+<label for="text">Text</label>
+<input type="text" name="text" id="text" value="{{ todo.text }}">
+<br>
+<label for="complete">Complete</label>
+<input type="checkbox" name="complete" id="complete" {% if todo.complete %}checked{% endif %}>
+<br>
+<button type="submit">Save</button>
+</form>
+</body>
+</html>
+
