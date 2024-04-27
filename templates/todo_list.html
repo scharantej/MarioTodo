@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TODO List</title>
+</head>
+<body>
+<h1>TODO List</h1>
+<form action="/todo" method="POST">
+<label for="text">Add new item</label>
+<input type="text" name="text" id="text">
+<br>
+<button type="submit">Add</button>
+</form>
+<br>
+<ul>
+{% for todo in todos %}
+<li>{{ todo.text }}
+<a href="/edit_todo/{{ todo.id }}">Edit</a>
+<a href="/delete_todo/{{ todo.id }}">Delete</a>
+</li>
+{% endfor %}
+</ul>
+</body>
+</html>
+
+
